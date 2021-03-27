@@ -7,6 +7,8 @@ from hooks.test_low_speed import test_low_speed
 from hooks.test_on_flag_change import test_on_flag_change
 from hooks.test_on_start import test_on_start
 from hooks.test_on_stop import test_on_stop
+from hooks.test_driver_swap import test_driver_swap
+
 
 HOOKS = {}
 
@@ -27,3 +29,4 @@ register("onLowSpeed", HOOKS, test_low_speed)
 register("onShownFlagChange", HOOKS, test_on_flag_change)
 register("onStart", HOOKS, test_on_start)
 register("onStop", HOOKS, test_on_stop)
+register("onDriverSwap", HOOKS, test_driver_swap)
