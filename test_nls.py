@@ -190,31 +190,31 @@ SECTIONS = {
 }
 
 
-def tst_nls(driver, speed, location):
+from rf2.interaction import chat
+from reciever import get_server_config
+
+
+def tst_nls(driver, speed, location, nearby, team):
     last = -1
     for post in POSTS:
         post_location = POSTS[post]
         if last < location and post_location > location:
-            print(
-                "Low speed car. next marshall post={}, v={}, driver={},location={}".format(
-                    post, speed, driver, location
-                )
-            )
-        last = post_location
-
+            last = post_location
+    print(
+        "Low speed car. next marshall post={}, v={}, driver={},location={}, team={}".format(
+            post, speed, driver, last, team
+        )
+    )
     last = -1
     last_name = None
     for section in SECTIONS:
         section_start = SECTIONS[section]
         if last < location and section_start > location:
             print(
-                "Low speed car. cur section={}, next section={}, v={}, driver={},location={}".format(
-                    last_name,
-                    section,
-                    speed,
-                    driver,
-                    location,
+                "Low speed car. cur section={}, next section={}, v={}, driver={},location={},team={}".format(
+                    last_name, section, speed, driver, location, team
                 )
             )
+            print("to_be_warned", nearby)
         last = section_start
         last_name = section
