@@ -200,6 +200,7 @@ def tst_nls(driver, speed, location, nearby, team):
         post_location = POSTS[post]
         if last < location and post_location > location:
             last = post_location
+            break
     print(
         "Low speed car. next marshall post={}, v={}, driver={},location={}, team={}".format(
             post, speed, driver, last, team
