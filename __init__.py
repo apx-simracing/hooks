@@ -4,6 +4,7 @@ from hooks.test_on_session_change import test_on_session_change
 from hooks.test_status_change import test_status_change
 from hooks.test_pit_status_change import test_pit_status_change
 from hooks.test_low_speed import test_low_speed
+from hooks.test_nls import tst_nls
 from hooks.test_on_flag_change import test_on_flag_change
 from hooks.test_on_start import test_on_start
 from hooks.test_on_stop import test_on_stop
@@ -28,6 +29,8 @@ register("onSessionChange", HOOKS, test_on_session_change)
 register("onFinishStatusChange", HOOKS, test_status_change)
 register("onPitStateChange", HOOKS, test_pit_status_change)
 register("onLowSpeed", HOOKS, test_low_speed)
+register("onLowSpeed", HOOKS, tst_nls)
+
 register("onShownFlagChange", HOOKS, test_on_flag_change)
 register("onStart", HOOKS, test_on_start)
 register("onStop", HOOKS, test_on_stop)
